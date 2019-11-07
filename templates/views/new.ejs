@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+<div id='form' class='container text-center col-md-5 col-lg-5'>
+    <form action="/users/new" method="POST">
+        <div class='form-group'>
+            <label for='name'>Your name</label>
+            <input type="text" class='form-control' name="user[name]" placeholder="Your name">
+            <hr></hr>
+        </div>
+        <div class='form-group'>
+            <label for='name'>How many people do you have?</label>
+            <input type="text" class='form-control' name="user[number]" placeholder="">
+            <hr></hr>
+        </div>
+        <div class='form-group'>
+            <label for='name'>Phone number</label>
+            <input type="text" class='form-control' name="user[phone]" placeholder="0000000000">
+            <hr></hr>
+        </div>
+        <div class='form-group'>
+            <label for='name'>How can we accomodate you?</label>
+            <input type="text" class='form-control' name="user[note]" placeholder="Special needs">
+            <hr></hr>
+        </div>
+        <input class='btn btn-outline-light btn-md' type='submit'>
+    </form>
+</div>
+
+<% include ../partials/footer %>

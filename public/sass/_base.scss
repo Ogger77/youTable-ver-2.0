@@ -1,0 +1,42 @@
+//color variables
+
+$color-grey-dark-2: #6D5D4B;
+
+//font variables
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+
+//responsive breakpoint
+$bp-largest: 75em;
+$bp-large: 62.5em;
+$bp-medium: 50em;
+$bp-small: 37.5em;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $bp-largest){
+        font-size: 50%;
+    } 
+}
+
+body{
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+    // background-color:
+    background-image: url(/img/back.png);
+    background-size: cover over;
+}
+

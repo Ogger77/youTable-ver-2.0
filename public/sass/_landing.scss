@@ -1,0 +1,24 @@
+.navbar1{
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: .1rem;
+    background: rgba(0,0,0,0.6)!important;
+}
+
+.caption{
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 38%;
+    z-index: 1;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .abs-center{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

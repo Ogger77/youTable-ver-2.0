@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<div class='waiting'>
+    <div id='head' class='container text-center'>
+        <h1>Current waiting list</h1>
+    </div>
+
+    <div id='index' class="container text-center col-sm-7 col-md-5 col-lg-6">   
+        <% users.forEach((user) => { %>
+            
+            <ul class="list-group list-group-horizontal-sm">
+                <li class='list-group-item flex-fill'>
+                    <%= user.name %>
+                </li>
+                <li class='list-group-item flex-fill'>
+                    <%= user.number %> people
+                </li>    
+                <li class='list-group-item flex-fill'>
+                    #number: <%= user.phone %> 
+                </li>
+                <li class='list-group-item flex-fill'>
+                    note: <%= user.note %>
+                </li>
+            </ul>
+            <footer class='blockquote-footer'>
+                <%= moment(user.date).format('h:mm:ss a') %>
+            </footer>
+            
+            <div class='container d-flex'>
+                <a class='btn btn-outline-success btn-md' href='/users/<%= user._id %>'>Send SMS</a>
+                <form id="delete" action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                    <button class='btn btn-outline-danger btn-md'>Delete</button>
+                </form>
+            </div>
+            <hr></hr>       
+        <% }) %>    
+    </div>
+</div>
+
+<% include ../partials/footer %>
