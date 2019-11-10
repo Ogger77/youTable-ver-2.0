@@ -68,7 +68,7 @@ app.get('/users/:id', async (req,res) => {
             res.redirect('/users')
         }else {
             try{
-                sendsms(foundUser.phone, foundUser.name, foundUser.number)
+                await sendsms(foundUser.phone, foundUser.name, foundUser.number)
             }catch(e){
                 console.log(e)
             }
