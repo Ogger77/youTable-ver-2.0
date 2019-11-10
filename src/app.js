@@ -1,10 +1,13 @@
 const path = require('path')
 const express = require('express')
-const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const moment = require('moment')
 
+require('ejs')
 require('./db/mongoose');
+
+const User = require('../src/models/user')
+const sendsms = require('../src/utils/sms')
 
 const app = express()
 
@@ -13,7 +16,6 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 
 const viewPath = path.join(__dirname, '../templates/views');
 
-const User = require('../src/models/user')
 
 //setup handlebar
 app.set('view engine', 'ejs')
@@ -59,10 +61,25 @@ app.post('/users/new', async(req, res) => {
     })
 })
 
-
-
-
-
+//send SMS route
+app.get('/users/:id', async (req,res) => {
+    User.findById(req.params.id, async (err, foundUser) => {
+        if(err){
+            res.redirect('/users')
+        }else {
+            try{
+                sendsms(foundUser.phone, foundUser.name, foundUser.number)
+            }catch(e){
+                console.log(e)
+            }
+            
+            res.render('new-success', {
+                user: foundUser
+            })
+            // await sendsms(foundUser.phone, foundUser.name, foundUser.number)
+        } 
+    })
+})
 
 
 app.listen(port, () => {

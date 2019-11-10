@@ -28,6 +28,8 @@
             
             <div class='container d-flex'>
                 <a class='btn btn-outline-success btn-md' href='/users/<%= user._id %>'>Send SMS</a>
+                
+                <!-- fix delete form -->
                 <form id="delete" action="/users/<%= user._id %>?_method=DELETE" method="POST">
                     <button class='btn btn-outline-danger btn-md'>Delete</button>
                 </form>
