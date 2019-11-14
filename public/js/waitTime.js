@@ -1,9 +1,7 @@
 const socket = io()
 const waitTimeTemplate = document.querySelector('#waitTime-msg').innerHTML
-const $message = document.querySelector('#waitTime')
 
 let time;
-
 
 //socket firing data when hit delete button
 $(function(){
@@ -16,14 +14,12 @@ $(function(){
             time = 0
         }
         socket.emit('waitData', time)
-        // $('#waitTime').text('');
-    //         
-    //     })
     })
+
     socket.on('waitData', (time) => {
         const html = Mustache.render(waitTimeTemplate, {
             time: time
         })
-        $message.insertAdjacentHTML('beforeend', html)
+        $('#waitTime').html(html)
     })
 })

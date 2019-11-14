@@ -31,9 +31,9 @@
               
                 <ul class='nav navbar-nav abs-center'>
                     <li class='nav-item'>
-                        <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: </a>
+                        <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: 0 mins</a>
                         <script id='waitTime-msg' type='text/html'>
-                            {{time}}
+                            <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: {{time}} mins</a>
                         </script>
                     </li>
                 </ul>
@@ -52,4 +52,3 @@
     </div>
 
     <script src='/socket.io/socket.io.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>

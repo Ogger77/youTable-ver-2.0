@@ -7,8 +7,11 @@ const methodOverride = require('method-override')
 require('./db/mongoose');
 
 const User = require('../src/models/user')
-const sendsms = require('../src/utils/sms')
+const Admin = require('../src/models/admin')
+const auth = require('../src/utils/auth')
 
+const sendsms = require('../src/utils/sms')
+const sendEmail = require('../src/utils/mail')
 
 //socket///
 const http = require('http')
@@ -24,13 +27,13 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views');
 
 
-//setup handlebar
 app.set('view engine', 'ejs')
 app.set('views', viewPath)
 
 app.use(express.static(publicDirectoryPath))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(methodOverride("_method"));
+app.use(express.json())
 
 /***********************Skeleton*******************/
 
@@ -100,6 +103,34 @@ app.delete('/users/:id', (req,res) => {
 })
 
 
+//admin route
+//create new admin
+app.post('/admin', async(req, res) => {
+    const admin = new Admin(req.body)
+
+    try{
+        await admin.save();
+        sendEmail(admin.email, admin.name)
+
+        const token = await admin.generateAuthToken();
+        res.status(201).send({ admin, token })
+    }catch(e){
+        res.status(400).send(e)
+    }
+})
+
+//admin login
+app.post('/admin/login', async(req, res) => {
+    try{
+        const admin = await Admin.findByCredentials(req.body.email, req.body.password)
+        const token = await admin.generateAuthToken()
+        res.send({ admin, token })
+    } catch(e){
+        res.status(400).send()
+    }
+})
+
+
 
 io.on('connection', (socket) => {
     console.log('connected')
@@ -112,7 +143,7 @@ io.on('connection', (socket) => {
 
 server.listen(port, () => {
     console.log(`Server is running on ${port}`)
- 
+
 })
 
 //credit to add in footer
