@@ -32,11 +32,10 @@ const adminSchema = new mongoose.Schema({
             }
         }
     },
-    // adminPass: {
-    //     type: String,
-    //     required: true,
-    //     trim: true,
-    // },
+    adminPass: {
+        type: String,
+        trim: true,
+    },
     tokens: [{
         token: {
             type: String,
@@ -67,7 +66,7 @@ adminSchema.methods.generateAuthToken = async function(){
     return token;
 }
 
-adminSchema.statics.findByCredentials = async(email, password) => {
+adminSchema.statics.findByCredentials = async(email, password, callback) => {
     const admin = await Admin.findOne({ email })
 
     if(!admin){
@@ -80,7 +79,7 @@ adminSchema.statics.findByCredentials = async(email, password) => {
         throw new Error('Unable to login')
     }
 
-    return admin
+    return callback(admin)
 }
 
 //hash the text password before saving

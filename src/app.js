@@ -42,6 +42,7 @@ app.get('', (req, res) => {
     res.render('landing')
 })
 
+//CUSTOMER ROUTE
 //show all user route
 app.get('/users', (req, res) => {
     User.find({}, (err, users) => {
@@ -62,7 +63,7 @@ app.get("/users/new", (req, res) => {
 });
 
 //create new user
-app.post('/users/new', async(req, res) => {
+app.post('/users/new', (req, res) => {
     User.create(req.body.user, (err, newUser) => {
         if(err){
             res.render("new");
@@ -103,7 +104,7 @@ app.delete('/users/:id', (req,res) => {
 })
 
 
-//admin route
+//ADMIN route
 //create new admin
 app.post('/admin', async(req, res) => {
     const admin = new Admin(req.body)
@@ -120,16 +121,24 @@ app.post('/admin', async(req, res) => {
 })
 
 //admin login
-app.post('/admin/login', async(req, res) => {
+app.get('/admin/login', (req, res) => {
+    res.render('adminlogin')
+})
+
+//login logic
+app.post('/admin/login', async (req, res) => {
     try{
         const admin = await Admin.findByCredentials(req.body.email, req.body.password)
         const token = await admin.generateAuthToken()
-        res.send({ admin, token })
+        // res.writeHead(200, {
+        //     'Content-type': 'text/plain',
+        //     'Authorization': `Bearer ${token}`
+        // })
+        res.render('new-success')
     } catch(e){
         res.status(400).send()
     }
 })
-
 
 
 io.on('connection', (socket) => {
