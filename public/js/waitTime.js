@@ -4,8 +4,9 @@ const waitTimeTemplate = document.querySelector('#waitTime-msg').innerHTML
 let time;
 
 //socket firing data when hit delete button
+//select all id that matching
 $(function(){
-    $('#delete').on('submit', function(e){
+    $('[id=delete]').on('submit', function(e){
         // e.preventDefault()
         const num = $('#index').find('ul').length
         if(num > 2){

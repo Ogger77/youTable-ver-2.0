@@ -1,159 +1,76 @@
-const path = require('path')
-const express = require('express')
-const bodyParser = require('body-parser')
-const moment = require('moment')
-const methodOverride = require('method-override')
+const path = require("path");
+const express = require("express");
 
-require('./db/mongoose');
+const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
+const passport = require("passport");
+const flash = require("connect-flash");
 
-const User = require('../src/models/user')
-const Admin = require('../src/models/admin')
-const auth = require('../src/utils/auth')
 
-const sendsms = require('../src/utils/sms')
-const sendEmail = require('../src/utils/mail')
+require("./db/mongoose");
+require('./utils/passport')(passport);
 
 //socket///
-const http = require('http')
-const socket = require('socket.io')
+const http = require("http");
+const socket = require("socket.io");
 
-const app = express()
-const server = http.createServer(app)
-const io = socket(server)
+const app = express();
+const server = http.createServer(app);
+const io = socket(server);
 
-const port = process.env.PORT || 3000
-const publicDirectoryPath = path.join(__dirname, '../public')
+const port = process.env.PORT || 3000;
+const publicDirectoryPath = path.join(__dirname, "../public");
+const viewPath = path.join(__dirname, "../templates/views");
 
-const viewPath = path.join(__dirname, '../templates/views');
+// app.use(expressLayouts)
+app.set("view engine", "ejs");
+app.set("views", viewPath);
 
-
-app.set('view engine', 'ejs')
-app.set('views', viewPath)
-
-app.use(express.static(publicDirectoryPath))
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static(publicDirectoryPath));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(express.json())
+app.use(express.json());
+app.use(flash());
 
 /***********************Skeleton*******************/
 
-//ROUTE
-app.get('', (req, res) => {
-    res.render('landing')
-})
+// PASSPORT configuration
+app.use(
+  require("express-session")({
+    secret: process.env.PASSPORT_SECRET,
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
-//CUSTOMER ROUTE
-//show all user route
-app.get('/users', (req, res) => {
-    User.find({}, (err, users) => {
-        if(err){
-            console.log('Error, cannot display customer list')
-        } else {
-            res.render('customerList', { 
-                users: users, 
-                moment: moment
-            });
-        }
-    })
-})
+app.use(passport.initialize());
+app.use(passport.session());
 
-//show new form
-app.get("/users/new", (req, res) => {
-    res.render("new");
+//flash setting (global variable)
+app.use(function (req, res, next){
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error = req.flash('error');
+  next();
 });
 
-//create new user
-app.post('/users/new', (req, res) => {
-    User.create(req.body.user, (err, newUser) => {
-        if(err){
-            res.render("new");
-        } else {
-            res.render("new-success");
-        }
-    })
-})
+//ROUTE
+app.use('/', require('./routes/users'))
+app.use('/admin', require('./routes/admin'))
 
-//send SMS route
-app.get('/users/:id', async (req,res) => {
-    User.findById(req.params.id, (err, foundUser) => {
-        if(err){
-            res.redirect('/users')
-        }else {
-            try{
-                sendsms(foundUser.phone, foundUser.name, foundUser.number)
-            }catch(e){
-                console.log(e)
-            }
-            
-            res.render('new-success', {
-                user: foundUser
-            })
-        } 
-    })
-})
-
-//delete route
-app.delete('/users/:id', (req,res) => {
-    User.findByIdAndRemove(req.params.id, (err) => {
-        if(err){
-            console.log(err)
-        }else{
-            res.redirect('/users')
-        }
-    })
-})
-
-
-//ADMIN route
-//create new admin
-app.post('/admin', async(req, res) => {
-    const admin = new Admin(req.body)
-
-    try{
-        await admin.save();
-        sendEmail(admin.email, admin.name)
-
-        const token = await admin.generateAuthToken();
-        res.status(201).send({ admin, token })
-    }catch(e){
-        res.status(400).send(e)
-    }
-})
-
-//admin login
-app.get('/admin/login', (req, res) => {
-    res.render('adminlogin')
-})
-
-//login logic
-app.post('/admin/login', async (req, res) => {
-    try{
-        const admin = await Admin.findByCredentials(req.body.email, req.body.password)
-        const token = await admin.generateAuthToken()
-        // res.writeHead(200, {
-        //     'Content-type': 'text/plain',
-        //     'Authorization': `Bearer ${token}`
-        // })
-        res.render('new-success')
-    } catch(e){
-        res.status(400).send()
-    }
-})
-
-
-io.on('connection', (socket) => {
-    console.log('connected')
-    socket.on('waitData', (time) => {
-        console.log(`data: ${time}`)
-        io.emit('waitData', time)
-    })
-})
-
+//socket route
+io.on("connection", socket => {
+  console.log("connected");
+  socket.on("waitData", time => {
+    console.log(`data: ${time}`);
+    io.emit("waitData", time);
+  });
+});
 
 server.listen(port, () => {
-    console.log(`Server is running on ${port}`)
+  console.log(`Server is running on ${port}`);
+});
 
-})
 
 //credit to add in footer
-{/* <div>Icons made by <a href="https://www.flaticon.com/authors/pause08" title="Pause08">Pause08</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */}
+  /* <div>Icons made by <a href="https://www.flaticon.com/authors/pause08" title="Pause08">Pause08</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
