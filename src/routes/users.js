@@ -42,7 +42,7 @@ router.post("/users/new", (req, res) => {
 });
 
 //send SMS route
-router.get("/users/:id", async (req, res) => {
+router.post("/users/:id", (req, res) => {
   User.findById(req.params.id, (err, foundUser) => {
     if (err) {
       res.redirect("/users");
@@ -52,10 +52,8 @@ router.get("/users/:id", async (req, res) => {
       } catch (e) {
         console.log(e);
       }
+      //popup message send
 
-      res.render("new-success", {
-        user: foundUser
-      });
     }
   });
 });
