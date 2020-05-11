@@ -9,12 +9,7 @@
       href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -28,6 +23,7 @@
   </head>
 
   <body data-target="#navbarResponsive">
+
     <div class="navbar1">
       <nav class="navbar navbar-expand-md navbar bg fixed-top">
         <div class="navbar-brand">
@@ -37,42 +33,22 @@
           </a>
         </div>
 
-        <div class="live-time">
-          <a id="waitTime" href="#" class="nav-link"
-            >CURRENT WAIT TIME: 0 mins</a
-          >
-          <script id="waitTime-msg" type="text/html">
-            <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: {{time}} mins</a>
-          </script>
-        </div>
-
-        <!-- <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          id="collapseButton"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
-
-        <!-- collapse button -->
-        <!-- <button
+        <button
           class="navbar-toggler second-button"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent23"
-          aria-controls="navbarSupportedContent23"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-target="#navbarResponsive"
           id='collapseButton'
-        > -->
-        <!-- collapse button -->
+        >
 
-          <!-- <div class="animated-icon2">
-            <span></span><span></span><span></span>
+        <!-- collapse button -->
+          <div class="animated-icon2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-        </button> -->
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
@@ -88,6 +64,22 @@
           </ul>
         </div>
       </nav>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-sm-4" id='live-time'>
+
+            <a id="waitTime" href="#" class="nav-link"
+              >CURRENT WAIT TIME: 0 mins</a
+            >
+            <script id="waitTime-msg" type="text/html">
+              <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: {{time}} mins</a>
+            </script>
+
+        </div>
+
+      </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>

@@ -1,5 +1,5 @@
-// $(document).ready(function(){
-//     $('.second-button').on('click', () => {
-//         $('.animated-icon2').toggleClass('open');
-//     });
-// })
+$(document).ready(function(){
+    $('.second-button').on('click', () => {
+        $('.animated-icon2').toggleClass('open');
+    });
+})
