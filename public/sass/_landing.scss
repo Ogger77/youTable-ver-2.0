@@ -1,26 +1,25 @@
-.navbar1 {
+.navbar{
+  margin-top: 1rem;
   font-size: 1.7rem;
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.1rem;
-  background: rgba(0, 0, 0, 0.6) !important;
-}
 
-.navbar-brand {
-  font-size: 2rem;
-  margin-left: 1.5rem;
-  margin-top: 2rem;
-
-  &--text {
-    color: $color-primary;
-  }
-
-  &--text:hover {
-    text-decoration: none;
-
-    color: $color-primary;
-    border-bottom: 1px solid $color-primary;
-    padding: 1px;
+  &-brand {
+    font-size: 2rem;
+    margin-left: 1.5rem;
+  
+    &--text {
+      color: $color-primary;
+    }
+  
+    &--text:hover {
+      text-decoration: none;
+  
+      color: $color-primary;
+      border-bottom: 1px solid $color-primary;
+      padding: 1px;
+    }
   }
 }
 
@@ -61,102 +60,112 @@
   }
 
   @media only screen and (max-width: $bp-medium) {
-    display: block;
+    display: inline-flex;
+    z-index: 1;
   }
 }
 
-.live-time {
-  margin-top: auto;
+#live-time {
+  margin-top: 10rem;
+  margin-left: 13vw;
+  font-size: 1.8rem;
+
+  @media only screen and (max-width: $bp-medium){
+    margin-top: 12rem;
+  }
 }
 
 #collapseButton {
   background-color: $color-primary;
 }
 
-// // collapse button
-// .animated-icon2 {
-//   width: 30px;
-//   height: 20px;
-//   position: relative;
-//   margin: 0px;
-//   -webkit-transform: rotate(0deg);
-//   -moz-transform: rotate(0deg);
-//   -o-transform: rotate(0deg);
-//   transform: rotate(0deg);
-//   -webkit-transition: 0.5s ease-in-out;
-//   -moz-transition: 0.5s ease-in-out;
-//   -o-transition: 0.5s ease-in-out;
-//   transition: 0.5s ease-in-out;
-//   cursor: pointer;
-// }
+// collapse button
+.animated-icon2 {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
 
-// .animated-icon2 span {
-//   display: block;
-//   position: absolute;
-//   height: 3px;
-//   width: 100%;
-//   border-radius: 9px;
-//   opacity: 1;
-//   left: 0;
-//   -webkit-transform: rotate(0deg);
-//   -moz-transform: rotate(0deg);
-//   -o-transform: rotate(0deg);
-//   transform: rotate(0deg);
-//   -webkit-transition: 0.25s ease-in-out;
-//   -moz-transition: 0.25s ease-in-out;
-//   -o-transition: 0.25s ease-in-out;
-//   transition: 0.25s ease-in-out;
-// }
+.animated-icon2 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  // border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+#collapseButton {
+  height: 4.3rem;
+}
+.animated-icon2 span {
+  background: #e3f2fd;
+}
+// collapse button
 
-// .animated-icon2 span {
-//   background: #e3f2fd;
-// }
-// // collapse button
+// animated button
+.animated-icon2 span:nth-child(1) {
+  top: -1px;
+}
 
-// // animated button
-// .animated-icon2 span:nth-child(1) {
-//     top: 0px;
-//     }
-    
-//     .animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
-//     top: 10px;
-//     }
-    
-//     .animated-icon2 span:nth-child(4) {
-//     top: 20px;
-//     }
-    
-//     .animated-icon2.open span:nth-child(1) {
-//     top: 11px;
-//     width: 0%;
-//     left: 50%;
-//     }
-    
-//     .animated-icon2.open span:nth-child(2) {
-//     -webkit-transform: rotate(45deg);
-//     -moz-transform: rotate(45deg);
-//     -o-transform: rotate(45deg);
-//     transform: rotate(45deg);
-//     }
-    
-//     .animated-icon2.open span:nth-child(3) {
-//     -webkit-transform: rotate(-45deg);
-//     -moz-transform: rotate(-45deg);
-//     -o-transform: rotate(-45deg);
-//     transform: rotate(-45deg);
-//     }
-    
-//     .animated-icon2.open span:nth-child(4) {
-//     top: 11px;
-//     width: 0%;
-//     left: 50%;
-//     }
+.animated-icon2 span:nth-child(2),
+.animated-icon2 span:nth-child(3) {
+  top: 9px;
+}
 
-    
+.animated-icon2 span:nth-child(4) {
+  top: 19px;
+}
+
+.animated-icon2.open span:nth-child(1) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
+}
+
+.animated-icon2.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.animated-icon2.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.animated-icon2.open span:nth-child(4) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
+}
+
+//section
 .section-landing {
   width: 100%;
   height: 100%;
-  padding: 25rem 0;
+  padding: 12rem 0;
   position: relative;
 }
 
@@ -173,11 +182,21 @@ h1 {
   font-size: 4.2rem;
   margin-bottom: 1rem;
   animation: moveInLeft 1s ease-out;
+
+
+  @media only screen and (max-width: $bp-medium){
+    font-size: 3.5rem;
+  }
+  
 }
 
 h3 {
   font-size: 3rem;
   animation: moveInRight 1s ease-out;
+
+  @media only screen and (max-width: $bp-medium){
+    font-size: 2.7rem;
+  }
 }
 
 .btn {
@@ -216,13 +235,5 @@ h3 {
     border-bottom: 1px solid $color-primary;
     padding: 3px;
     transition: all 0.2s;
-  }
-}
-
-@media (min-width: 768px) {
-  .abs-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
