@@ -34,7 +34,7 @@ router.get("/users/new", (req, res) => {
 router.post("/users/new", (req, res) => {
   User.create(req.body.user, (err, newUser) => {
     if (err) {
-      res.render("new");
+      console.log('error');
     } else {
       res.render("new-success");
     }
