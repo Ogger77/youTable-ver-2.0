@@ -1,17 +1,31 @@
 <% include ../partials/header %>
 
 
-<h1 id='check_status'>Check-in comleted</h1>
+<div class="caption--success text-center">
 
+    <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-<div class="jumbotron">
-    <h2 class="display-4">Check-in completed</h2>
-    <p class="lead">Thank you, we will sent you a message as soon as your table is ready</p>
-    <hr class="my-4">
-    <a class="btn btn--animated" href="/" role="button">Finish</a>
+    <div class='status-text'>
+        <h1 class='success1'>Check-in completed</h1>
+        <h3 class='success3'>We will sent you a message as soon as your table is ready</h2>
+        <hr class="myHr">
+        <a class="btn btn--animated" href="/" role="button">Finish</a>
+    </div>
 </div>
 
 <script type='text/javaScript' src='/js/waitTime-landing.js'></script>
+<script>
+    let myVar;
+    function mySpinner() {
+        myVar = setTimeout(showPage, 2000);
+    }
+
+    function showPage() {
+        document.querySelector(".lds-grid").style.display = "none";
+        document.querySelector(".status-text").style.display = "block";
+    }
+</script>
+
 <% include ../partials/footer %>
 
 

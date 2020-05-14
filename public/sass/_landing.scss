@@ -178,19 +178,17 @@
   color: $color-grey-dark;
 }
 
-h1 {
+.h1{
   font-size: 4.2rem;
-  margin-bottom: 1rem;
   animation: moveInLeft 1s ease-out;
-
+  margin-bottom: 1rem;
 
   @media only screen and (max-width: $bp-medium){
     font-size: 3.5rem;
   }
-  
 }
 
-h3 {
+.h3{
   font-size: 3rem;
   animation: moveInRight 1s ease-out;
 
