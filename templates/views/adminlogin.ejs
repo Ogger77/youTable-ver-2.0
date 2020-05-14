@@ -1,25 +1,37 @@
 <% include ../partials/header %>
-
-<div id="signin" class="container text-center col-md-5 col-lg-5">
-  <form action="/admin/login" method="POST">
-    <img src="/img/dish.png" width='72' height='72'>
-    <h1 class='h3 mb-3 font-weight-normal'>Admin please sign in</h1>
-
-    <% include ../partials/errMsg %>
-
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" name='email' placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" name='password' placeholder="Password">
-    </div>
-    <!-- <div class="form-group">
-      <label for='adminPass'>Admin code</label>
-      <input type="password" class='form-control' name='admin[adminPass]' placeholder="Admin code">
-    </div> -->
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<section class='section-new'>
+  <div class="container col-md-5 col-lg-5">
+    <form action="/admin/login" method="POST" class='form' autocomplete="off">
+      <img src="/img/dish(1).png" width="72" height="72" />
+      <h1 class="success1">Admin please sign in</h1>
+  
+      <% include ../partials/errMsg %>
+  
+      <div class="form__group">
+        <input
+          type="email"
+          class="form__input"
+          name="email"
+          placeholder="Admin email"
+          required
+        />
+        <label for="email" class='form__label'>Email address</label>
+      </div>
+  
+      <div class="form__group">
+        <input
+          type="password"
+          class="form__input"
+          name="password"
+          placeholder="Password"
+        />
+        <label for="password" class='form__label'>Password</label>
+      </div>
+  
+      <button type="submit" class="btn btn--new">Submit</button>
+    </form>
+  </div>
+</section>
 
 <% include ../partials/footer %>
+
