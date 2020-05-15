@@ -1,5 +1,6 @@
-<% if(typeof error != 'undefined') { %> <% error.forEach(function(error){ %>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+<% if(typeof errors != 'undefined') { %>
+     <% error.forEach(function(error){ %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id='alert-msg'>
         <%= error.msg %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -9,7 +10,7 @@
 <% } %>
 
 <% if(success_msg != ''){ %>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id='alert-msg'>
             <%= success_msg %>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -18,7 +19,7 @@
 <% } %>
 
 <% if(error_msg != ''){ %>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id='alert-msg'>
             <%= error_msg %>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -27,10 +28,10 @@
 <% } %>
 
 <% if(error != ''){ %>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id='alert-msg'>
         <%= error %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
         </button>
     </div>
 <% } %>

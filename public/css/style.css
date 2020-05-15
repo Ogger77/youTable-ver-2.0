@@ -293,6 +293,8 @@ body {
 
 .success1 {
   font-size: 3rem; }
+  .success1--signin {
+    margin-bottom: 2rem; }
 
 .success3 {
   font-size: 2.5rem;
@@ -424,10 +426,14 @@ body {
   padding: 3px;
   transition: all .2s; }
 
-#signin {
-  margin-top: 8rem;
-  font-weight: 55;
-  font-size: 1.2rem; }
+#alert-msg {
+  font-family: "Nunito", sans-serif;
+  color: #999;
+  font-size: 1.5rem;
+  width: 90%; }
+
+#section-admin {
+  margin-top: -2rem; }
 
 #register {
   margin-top: 8rem;
@@ -435,8 +441,19 @@ body {
   font-weight: 55;
   font-size: 1.2rem; }
 
-#admin-welcome {
-  margin-top: 13rem;
-  color: white;
-  font-weight: 55;
-  font-size: 1.2rem; }
+#section-admin {
+  margin-top: -1rem; }
+
+#welcome-brand {
+  font-size: 2rem; }
+
+.admin-welcome--brand {
+  margin-bottom: 2rem; }
+
+#adminLeft {
+  float: left;
+  margin-left: 19rem; }
+
+#adminRight {
+  float: right;
+  margin-right: 21rem; }

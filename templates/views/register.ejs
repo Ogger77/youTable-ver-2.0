@@ -1,34 +1,61 @@
 <% include ../partials/header %>
 
-    <!-- //fillout all the label and value -->
-    <div id='register' class='container text-center col-md-5 col-lg-5'>
-        <img src="/img/dish.png" width='72' height='72'>
-        <h1 class='h3 mb-3 font-weight-normal'>Restaurant's employee Sign Up</h1>
-        
-        <% include ../partials/errMsg %>
+<section class="section-new">
+  <div class="container col-md-5 col-lg-5">
+    <h1 class="success1--signin">Restaurant's employee Sign Up</h1>
 
-        <form action="/admin/register" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input class="form-control" type="name" name="name" placeholder="Enter name"
-                        value="<%= typeof name != 'undefined' ? name : '' %>">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" type="email" name="email" placeholder="Enter email"
-                        value="<%= typeof email != 'undefined' ? email : '' %>">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" name="password" placeholder="password">
-            </div>
-            <div class="form-group">
-                <input class="form-control" type="password" name="password2" placeholder="Retype your password">
-            </div>
-            <div class="form-group">
-                <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
-            </div>
-        </form>
-        <p class='lead mt-4'>Already register? <a href='/admin/login'>Login</a></p>
-    </div>
+    <% include ../partials/errMsg %>
+
+    <form action="/admin/register" method="POST" class="form" autocomplete="off">
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="name"
+          name="name"
+          placeholder="Employee's name"
+          value="<%= typeof name != 'undefined' ? name : '' %>"
+        />
+        <label for="name" class="form__label">Employee's name</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="email"
+          name="email"
+          placeholder="Employee's email"
+          value="<%= typeof email != 'undefined' ? email : '' %>"
+        />
+        <label for="email" class='form__label'>Employee's email</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <label for="password" class='form__label'>Password</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="password"
+          name="password2"
+          placeholder="Retype your password"
+        />
+        <label for="password2" class='form__label'>Retype your password</label>
+      </div>
+
+      <button type="submit" class="btn btn--new">Register</button>
+    </form>
+  </div>
+  <div>
+    <h3 class="success3">Already register? <a href="/admin/login">Login</a></p>
+  </div>
+
+</section>
 
 <% include ../partials/footer %>

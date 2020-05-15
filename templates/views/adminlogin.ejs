@@ -1,12 +1,11 @@
 <% include ../partials/header %>
-<section class='section-new'>
+<section class="section-landing" id="section-admin">
   <div class="container col-md-5 col-lg-5">
-    <form action="/admin/login" method="POST" class='form' autocomplete="off">
-      <img src="/img/dish(1).png" width="72" height="72" />
-      <h1 class="success1">Admin please sign in</h1>
-  
+    <form action="/admin/login" method="POST" class="form" autocomplete="off">
+      <h1 class="success1--signin">Admin please sign in</h1>
+
       <% include ../partials/errMsg %>
-  
+
       <div class="form__group">
         <input
           type="email"
@@ -15,9 +14,9 @@
           placeholder="Admin email"
           required
         />
-        <label for="email" class='form__label'>Email address</label>
+        <label for="email" class="form__label">Email address</label>
       </div>
-  
+
       <div class="form__group">
         <input
           type="password"
@@ -25,13 +24,12 @@
           name="password"
           placeholder="Password"
         />
-        <label for="password" class='form__label'>Password</label>
+        <label for="password" class="form__label">Password</label>
       </div>
-  
+
       <button type="submit" class="btn btn--new">Submit</button>
     </form>
   </div>
 </section>
 
 <% include ../partials/footer %>
-

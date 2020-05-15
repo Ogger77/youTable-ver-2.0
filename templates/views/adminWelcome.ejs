@@ -1,17 +1,20 @@
 <% include ../partials/header %>
 
-
-<div id='admin-welcome' class="text-center col-md-5 col-lg-5">
-  <div class="col-md-6 m-auto">
-    <div class="card card-body text-center">
-        <img src="/img/dish.png" width='72' height='72'>
-      <p>Create an account or login</p>
-      <a href="/admin/register" class="btn btn-primary btn-block mb-2"
-        >Register</a
-      >
-      <a href="/admin/login" class="btn btn-secondary btn-block">Login</a>
+<section class='section-landing' id='section-admin'>
+  <div id='admin-welcome' class="container col-md-5 col-lg-5 text-center">
+    <div class='admin-welcome--brand'>
+      <img src="/img/dish(1).png" width='60' height='60'>
+      <a href="/" class="navbar-brand--text" id='welcome-brand'>
+        yourTable
+      </a>  
     </div>
+    <h1 class='success1'>Create an account or login
+    <hr class='myHr'>
+
+    <a href="/admin/register" class="btn btn--new" id='adminLeft'>Register</a>
+    <a href="/admin/login" class="btn btn--new" id='adminRight'>Login</a>
   </div>
-</div>
+</section>
+
 
 <% include ../partials/footer %>
