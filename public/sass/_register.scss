@@ -1,6 +1,16 @@
 #register{
-    margin-top: 8rem;
-    color: white;
-    font-weight: 55;
-    font-size: 1.2rem;    
+    float: right;
+    margin-right: 6rem;    
+}
+
+.login-text{
+    &:link,
+    &:visited {
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all 0.2s;
+    }
 }

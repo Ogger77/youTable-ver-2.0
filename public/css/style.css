@@ -378,44 +378,44 @@ body {
 
 .section-waiting {
   padding: 13rem 0;
+  margin-top: -7rem;
   height: 100%;
   width: 100%;
   position: relative; }
 
-.wait__ul {
-  list-style: none;
-  font-size: 2rem;
-  position: relative;
-  padding: 3rem 4rem;
-  text-align: center;
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  border-bottom: 3px solid transparent;
-  width: 90%;
-  display: block;
-  transition: all .3s;
-  outline: none;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-  border-bottom: 3px solid #55c57a;
-  margin-bottom: 4.5rem; }
-
-.wait__list {
-  font-size: 2rem;
-  font-family: inherit;
-  color: inherit;
-  float: left;
-  margin-left: 2rem; }
-
-.wait__btn1 {
-  position: absolute;
-  top: 15%;
-  right: 10%; }
-
-.wait__btn2 {
-  position: absolute;
-  top: 50%;
-  right: 10%; }
+.wait {
+  transition: all 0.2s; }
+  .wait__ul {
+    list-style: none;
+    font-size: 2rem;
+    position: relative;
+    padding: 3rem 4rem;
+    text-align: center;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all .3s;
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #55c57a;
+    margin-bottom: 4.5rem; }
+  .wait__list {
+    font-size: 2rem;
+    font-family: inherit;
+    color: inherit;
+    float: left;
+    margin-left: 2rem; }
+  .wait__btn1 {
+    position: absolute;
+    top: 15%;
+    right: 10%; }
+  .wait__btn2 {
+    position: absolute;
+    top: 50%;
+    right: 10%; }
 
 .btn--waitPage {
   font-size: 2.5rem;
@@ -436,10 +436,16 @@ body {
   margin-top: -2rem; }
 
 #register {
-  margin-top: 8rem;
-  color: white;
-  font-weight: 55;
-  font-size: 1.2rem; }
+  float: right;
+  margin-right: 6rem; }
+
+.login-text:link, .login-text:visited {
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s; }
 
 #section-admin {
   margin-top: -1rem; }

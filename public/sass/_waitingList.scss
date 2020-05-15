@@ -1,18 +1,20 @@
 .section-waiting {
     padding: 13rem 0;
-    // margin-top: -20vh; 
+    margin-top: -7rem; 
     height: 100%;
     width: 100%;
     position: relative;
 }
 
 .wait{
-
+    transition: all 0.2s;
+    
     &__ul{
         list-style: none;
         font-size: 2rem;
 
         position: relative;
+
 
         padding: 3rem 4rem;
         text-align: center;
