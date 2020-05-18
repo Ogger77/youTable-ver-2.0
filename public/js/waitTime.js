@@ -24,3 +24,4 @@ $(function(){
         $('#waitTime').html(html)
     })
 })
+

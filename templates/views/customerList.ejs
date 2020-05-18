@@ -5,7 +5,7 @@
         <div class='form'>
             <h2 class='heading-secondary'>Current waiting list</h2>
 
-            <div class="wait">
+            <div class="wait" id='index'>
                 <% users.forEach((user) => { %>
                     <ul class="wait__ul">
                         <li class='wait__list'>
@@ -29,7 +29,7 @@
                             <button class='btn btn--waitPage' id='sendSMS__btn'>Send SMS</button>                  
                         </form>    
                      
-                        <form class='wait__btn2' action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                        <form class='wait__btn2' action="/users/<%= user._id %>?_method=DELETE" method="POST" id='delete'>
                             <button class='btn btn--waitPage'>Delete</button>
                         </form>
                     </ul>
@@ -42,7 +42,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script type='text/javaScript' src='/js/waitTime.js'></script>
-<script type='text/javaScript'>
+<!-- <script type='text/javaScript'>
     $('.wait__btn1').on('hover', function(e){
         cid = this.id
         console.log(cid)
@@ -52,6 +52,7 @@
             $(this).attr('disabled', true)
         })
     })
-</script>
+</script> -->
 
 <% include ../partials/footer %>
+

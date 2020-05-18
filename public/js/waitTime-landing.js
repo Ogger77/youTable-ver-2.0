@@ -7,3 +7,5 @@ socket.on('waitData', (time) => {
     })
     $('#waitTime').html(html)
 })
+
+

@@ -6,7 +6,7 @@ const sendsms = (phone, name, people) => {
     client.messages.create({
         body: `Hello ${name}, yourTable for ${people} is ready. Please see the host within 5 mins to get yourTable`,
         to: `+1${phone}`,
-        from: '+12015844512'
+        from: '+12058902248'
     }).then(message => console.log(message.sid))
 }
 

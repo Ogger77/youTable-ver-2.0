@@ -45,7 +45,7 @@ router.post("/users/new", (req, res) => {
 router.post("/users/:id", (req, res) => {
   User.findById(req.params.id, (err, foundUser) => {
     if (err) {
-      res.redirect("/users");
+      console.log(err)
     } else {
       try {
         sendsms(foundUser.phone, foundUser.name, foundUser.number);
