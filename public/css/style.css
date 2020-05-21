@@ -237,7 +237,10 @@ body {
   padding: 1.5rem 0;
   height: 100%;
   width: 100%;
-  position: relative; }
+  position: relative;
+  margin-top: 13rem; }
+  .section-new--success {
+    margin-top: 25rem; }
 
 .heading-secondary {
   margin-bottom: 3rem;
@@ -288,8 +291,7 @@ body {
     transform: translateY(-4rem); }
 
 .status-text {
-  display: none;
-  margin-top: 10rem; }
+  display: none; }
 
 .success1 {
   font-size: 3rem; }
@@ -314,8 +316,7 @@ body {
   display: inline-block;
   position: relative;
   width: 80px;
-  height: 80px;
-  margin-top: 11rem; }
+  height: 80px; }
 
 .lds-grid div {
   position: absolute;
@@ -376,13 +377,6 @@ body {
   50% {
     opacity: 0.5; } }
 
-.section-waiting {
-  padding: 13rem 0;
-  margin-top: -7rem;
-  height: 100%;
-  width: 100%;
-  position: relative; }
-
 .wait {
   transition: all 0.2s; }
   .wait__ul {
@@ -425,6 +419,9 @@ body {
   border-bottom: 1px solid #55c57a;
   padding: 3px;
   transition: all .2s; }
+  @media only screen and (max-width: 50em) {
+    .btn--waitPage {
+      font-size: 2.1rem; } }
 
 #alert-msg {
   font-family: "Nunito", sans-serif;
@@ -437,7 +434,7 @@ body {
 
 #register {
   float: right;
-  margin-right: 6rem; }
+  margin-right: 4vw; }
 
 .login-text:link, .login-text:visited {
   color: #55c57a;
@@ -448,7 +445,7 @@ body {
   transition: all 0.2s; }
 
 #section-admin {
-  margin-top: -1rem; }
+  margin-top: 23rem; }
 
 #welcome-brand {
   font-size: 2rem; }
@@ -458,8 +455,8 @@ body {
 
 #adminLeft {
   float: left;
-  margin-left: 19rem; }
+  margin-left: 11vw; }
 
 #adminRight {
   float: right;
-  margin-right: 21rem; }
+  margin-right: 11vw; }

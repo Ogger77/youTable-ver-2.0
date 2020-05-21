@@ -1,5 +1,21 @@
 <% include ../partials/header %>
 
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-sm-4" id='live-time'>
+
+          <a id="waitTime" href="#" class="nav-link"
+            >CURRENT WAIT TIME: 0 mins</a
+          >
+          <script id="waitTime-msg" type="text/html">
+            <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: {{time}} mins</a>
+          </script>
+
+      </div>
+
+    </div>
+  </div>
+
 <section class='section-landing'>
     <div class='caption text-center'>
         <h1 class='h1'>Welcome to Binh Duong restaurant</h1>

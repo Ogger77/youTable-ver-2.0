@@ -7,7 +7,6 @@ let time;
 //select all id that matching
 $(function(){
     $('[id=delete]').on('submit', function(e){
-        // e.preventDefault()
         const num = $('#index').find('ul').length
         if(num > 2){
             time = 10 * (num-3)

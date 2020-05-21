@@ -1,23 +1,26 @@
 <% include ../partials/header %>
 
+<section class='section-new--success'>
+    <div class="caption--success text-center">
 
-<div class="caption--success text-center">
-
-    <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-
-    <div class='status-text'>
-        <h1 class='success1'>Check-in completed</h1>
-        <h3 class='success3'>We will sent you a message as soon as your table is ready</h2>
-        <hr class="myHr">
-        <a class="btn btn--animated" href="/" role="button">Finish</a>
+        <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    
+        <div class='status-text'>
+            <h1 class='success1'>Check-in completed</h1>
+            <h3 class='success3'>We will sent you a message as soon as your table is ready</h2>
+            <hr class="myHr">
+            <a class="btn btn--animated" href="/" role="button">Finish</a>
+        </div>
     </div>
-</div>
+</section>
+
+
 
 <script type='text/javaScript' src='/js/waitTime-landing.js'></script>
 <script>
     let myVar;
     function mySpinner() {
-        myVar = setTimeout(showPage, 2000);
+        myVar = setTimeout(showPage, 1500);
     }
 
     function showPage() {
