@@ -6,8 +6,16 @@
   "scripts": {
     "watch:sass": "node-sass public/sass/main.scss public/css/style.css -w",
     "dev": "env-cmd -f ./config/dev.env nodemon src/app.js -e js,ejs",
+    "wizard": "workbox wizard --injectManifest",
+    "generate-sw": "workbox injectManifest",
     "start": "npm-run-all --parallel dev watch:sass"
   },
+  "keywords": [
+    "progressive",
+    "web",
+    "app",
+    "live"
+  ],
   "author": "Dinh Vu",
   "license": "ISC",
   "dependencies": {
@@ -34,7 +42,8 @@
     "postcss-cli": "^6.1.3",
     "socket.io": "^2.3.0",
     "twilio": "^3.37.0",
-    "validator": "^12.0.0"
+    "validator": "^12.0.0",
+    "window": "^4.2.7"
   },
   "devDependencies": {},
   "repository": {

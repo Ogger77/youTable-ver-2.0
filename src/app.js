@@ -10,6 +10,11 @@ const flash = require("connect-flash");
 require("./db/mongoose");
 require('./utils/passport')(passport);
 
+//progressive
+// const Window = require('window');
+// const window = new Window();
+// const navigator = window.navigator;
+
 //socket///
 const http = require("http");
 const socket = require("socket.io");
