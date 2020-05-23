@@ -8,7 +8,8 @@
     "dev": "env-cmd -f ./config/dev.env nodemon src/app.js -e js,ejs",
     "wizard": "workbox wizard --injectManifest",
     "generate-sw": "workbox injectManifest",
-    "start": "npm-run-all --parallel dev watch:sass"
+    "start-dev": "npm-run-all --parallel dev watch:sass",
+    "start": "node src/app.js"
   },
   "keywords": [
     "progressive",
