@@ -480,7 +480,10 @@ body {
   flex: 1; }
 
 .footer-text {
-  font-size: 1.7rem; }
+  font-size: 1.5rem; }
   @media only screen and (max-width: 50em) {
     .footer-text {
-      font-size: 1.3rem; } }
+      font-size: 1rem; } }
+  .footer-text__atr {
+    text-decoration: none;
+    color: #55c57a; }
