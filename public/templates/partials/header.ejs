@@ -78,10 +78,25 @@
       </nav>
     </div>
 
-
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
-
+    
+    <!-- <script>
+      let butt = document.querySelector('#collapseButton');
+      butt.addEventListener('click', () => {
+          console.log('but clicked');
+          const promptEvent = window.deferredPrompt;
+          if(!promptEvent){
+              return;
+          }
+    
+          promptEvent.prompt();
+          promptEvent.userChoice.then((result) => {
+              console.log(result);
+              window.deferredPrompt = null;
+          })
+      })
+    </script> -->
   </body>
 </html>
 

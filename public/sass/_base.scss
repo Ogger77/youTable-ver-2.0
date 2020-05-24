@@ -36,5 +36,8 @@ body{
     line-height: 1.6;
     // background-color:
     background-color: $color-grey-light-1;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 

@@ -1,6 +1,10 @@
 #register{
     float: right;
     margin-right: 4vw;    
+
+    @media only screen and (max-width: $bp-medium){
+        font-size: 1.7rem;
+    }
 }
 
 .login-text{
@@ -14,3 +18,5 @@
         transition: all 0.2s;
     }
 }
+
+

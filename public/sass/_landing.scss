@@ -207,6 +207,10 @@
     border-bottom: 1px solid $color-primary;
     padding: 3px;
     transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.7rem;
+    }
   }
 
   &:hover {
@@ -233,5 +237,9 @@
     border-bottom: 1px solid $color-primary;
     padding: 3px;
     transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.7rem;
+    }
   }
 }

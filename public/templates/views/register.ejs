@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+
+<section class="section-new">
+  <div class="container col-md-5 col-lg-5">
+    <h1 class="success1--signin">Restaurant's employee Sign Up</h1>
+
+    <% include ../partials/errMsg %>
+
+    <form action="/admin/register" method="POST" class="form" autocomplete="off">
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="name"
+          name="name"
+          placeholder="Employee's name"
+          value="<%= typeof name != 'undefined' ? name : '' %>"
+        />
+        <label for="name" class="form__label">Employee's name</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="email"
+          name="email"
+          placeholder="Employee's email"
+          value="<%= typeof email != 'undefined' ? email : '' %>"
+        />
+        <label for="email" class='form__label'>Employee's email</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="password"
+          name="password"
+          placeholder="password"
+        />
+        <label for="password" class='form__label'>Password</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          class="form__input"
+          type="password"
+          name="password2"
+          placeholder="Retype your password"
+        />
+        <label for="password2" class='form__label'>Retype your password</label>
+      </div>
+
+      <button type="submit" class="btn btn--new">Register</button>
+      <h3 class="success3" id='register'>Already register?
+      <a href="/admin/login" class='btn btn--new'>Login</a>
+      </h3>
+    </form>
+  </div>
+  <div>
+  </div>
+
+</section>
+
+<% include ../partials/footer %>

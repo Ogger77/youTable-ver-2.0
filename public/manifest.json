@@ -13,17 +13,12 @@
             "sizes": "128x128"
         },
         {
-            "src": "/img/dish192x192.png",
-            "type": "image/png",
-            "sizes": "192x192"
-        },
-        {
             "src": "/img/dish(1).png",
             "type": "image/png",
             "sizes": "512x512"
         }
     ],
-    "start_url": "/",
+    "start_url": "/users/new",
     "scope": ".",
     "display": "standalone",
     "orientation": "portrait-primary",

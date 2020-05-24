@@ -17,7 +17,10 @@ body {
   color: #999;
   font-weight: 300;
   line-height: 1.6;
-  background-color: #f7f7f7; }
+  background-color: #f7f7f7;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
 
 @keyframes moveInLeft {
   0% {
@@ -209,6 +212,9 @@ body {
   border-bottom: 1px solid #55c57a;
   padding: 3px;
   transition: all 0.2s; }
+  @media only screen and (max-width: 50em) {
+    .btn:link, .btn:visited {
+      font-size: 1.7rem; } }
 
 .btn:hover {
   background-color: #55c57a;
@@ -232,6 +238,9 @@ body {
   border-bottom: 1px solid #55c57a;
   padding: 3px;
   transition: all 0.2s; }
+  @media only screen and (max-width: 50em) {
+    .btn--new {
+      font-size: 1.7rem; } }
 
 .section-new {
   padding: 1.5rem 0;
@@ -252,6 +261,9 @@ body {
   color: transparent;
   letter-spacing: .2rem;
   transition: all .2s; }
+  @media only screen and (max-width: 50em) {
+    .heading-secondary {
+      font-size: 2rem; } }
 
 .form {
   position: absolute;
@@ -435,6 +447,9 @@ body {
 #register {
   float: right;
   margin-right: 4vw; }
+  @media only screen and (max-width: 50em) {
+    #register {
+      font-size: 1.7rem; } }
 
 .login-text:link, .login-text:visited {
   color: #55c57a;
@@ -460,3 +475,12 @@ body {
 #adminRight {
   float: right;
   margin-right: 11vw; }
+
+.site {
+  flex: 1; }
+
+.footer-text {
+  font-size: 1.7rem; }
+  @media only screen and (max-width: 50em) {
+    .footer-text {
+      font-size: 1.3rem; } }

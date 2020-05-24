@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+
+<section class='section-new'>
+    <div class="container col-md-5 col-lg-5">
+        <div class='form'>
+            <h2 class='heading-secondary'>Current waiting list</h2>
+
+            <div class="wait" id='index'>
+                <% users.forEach((user) => { %>
+                    <ul class="wait__ul">
+                        <li class='wait__list'>
+                            <%= moment(user.date).format('h:mm:ss a') %>
+                        </li>
+                        <br>
+                        <li class='wait__list'>
+                            <%= user.name %>
+                        </li>
+                        <li class='wait__list'>
+                            <%= user.number %> people
+                        </li>   
+                        <br> 
+                        <li class='wait__list'>
+                            note: <%= user.note %>
+                        </li>
+                        <br>
+                        
+                       
+                        <form class="wait__btn1" id='sendSMS__<%= user._id %>' action='/users/<%= user._id %>'  method='POST'>
+                            <button class='btn btn--waitPage' id='sendSMS__btn'>Send SMS</button>                  
+                        </form>    
+                     
+                        <form class='wait__btn2' action="/users/<%= user._id %>?_method=DELETE" method="POST" id='delete'>
+                            <button class='btn btn--waitPage'>Delete</button>
+                        </form>
+                    </ul>
+                <% }) %>    
+            </div>
+        </div>
+    </div>
+            
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type='text/javaScript' src='/js/waitTime.js'></script>
+<script type='text/javaScript'>
+    $('#wait__btn1').one('submit', function() {
+        $(this).find('input[type="submit"]').attr('onclick','this.style.opacity = "0.6";');
+    });
+</script>
+
+<% include ../partials/footer %>
+

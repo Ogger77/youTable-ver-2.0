@@ -1,20 +1,23 @@
 <% include ../partials/header %>
 
-<section class='section-new--success' id='section-admin'>
-  <div id='admin-welcome' class="container col-md-5 col-lg-5 text-center">
-    <div class='admin-welcome--brand'>
-      <img src="/img/dish(1).png" width='60' height='60'>
-      <a href="/" class="navbar-brand--text" id='welcome-brand'>
-        yourTable
-      </a>  
+<main class='site'>
+  <section class='section-new--success' id='section-admin'>
+    <div id='admin-welcome' class="container col-md-5 col-lg-5 text-center">
+      <div class='admin-welcome--brand'>
+        <img src="/img/dish(1).png" width='60' height='60'>
+        <a href="/" class="navbar-brand--text" id='welcome-brand'>
+          yourTable
+        </a>  
+      </div>
+      <h1 class='success1'>Create an account or login
+      <hr class='myHr'>
+  
+      <a href="/admin/register" class="btn btn--new" id='adminLeft'>Register</a>
+      <a href="/admin/login" class="btn btn--new" id='adminRight'>Login</a>
     </div>
-    <h1 class='success1'>Create an account or login
-    <hr class='myHr'>
+  </section>
+</main>
 
-    <a href="/admin/register" class="btn btn--new" id='adminLeft'>Register</a>
-    <a href="/admin/login" class="btn btn--new" id='adminRight'>Login</a>
-  </div>
-</section>
 
 
 <% include ../partials/footer %>

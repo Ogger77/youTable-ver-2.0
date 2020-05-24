@@ -1,0 +1,58 @@
+<% include ../partials/header %>
+
+<section class="section-new">
+  <div class="container col-md-5 col-lg-5">
+    <form action="/users/new" class="form" method="POST" autocomplete="off">
+      <h2 class="heading-secondary">
+        Start reserve yourTable
+      </h2>
+
+      <div class="form__group">
+        <input
+          type="text"
+          class="form__input"
+          name="user[name]"
+          placeholder="Your name"
+          required
+        />
+        <label for="name" class="form__label">Your name</label>
+      </div>
+      <div class="form__group">
+        <input
+          type="text"
+          class="form__input"
+          name="user[number]r"
+          placeholder="How many people do you have?"
+          required
+        />
+        <label for="name" class="form__label"
+          >How many people do you have?</label
+        >
+      </div>
+      <div class="form__group">
+        <input
+          type="text"
+          class="form__input"
+          name="user[phone]"
+          placeholder="Your phone number"
+          required
+        />
+        <label for="name" class="form__label">Your phone number</label>
+      </div>
+      <div class="form__group">
+        <input
+          type="text"
+          class="form__input"
+          name="user[note]"
+          placeholder="How can we accomodate you?"
+        />
+        <label for="name" class="form__label">How can we accomodate you?</label>
+      </div>
+      <div class="form__group">
+        <button class="btn btn--new">Reserve &rarr;</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<% include ../partials/footer %>

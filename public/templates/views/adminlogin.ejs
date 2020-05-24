@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+<section class="section-new" id="section-admin">
+  <div class="container col-md-5 col-lg-5">
+    <form action="/admin/login" method="POST" class="form" autocomplete="off">
+      <h1 class="success1--signin">Admin please sign in</h1>
+
+      <% include ../partials/errMsg %>
+
+      <div class="form__group">
+        <input
+          type="email"
+          class="form__input"
+          name="email"
+          placeholder="Admin email"
+          required
+        />
+        <label for="email" class="form__label">Email address</label>
+      </div>
+
+      <div class="form__group">
+        <input
+          type="password"
+          class="form__input"
+          name="password"
+          placeholder="Password"
+        />
+        <label for="password" class="form__label">Password</label>
+      </div>
+
+      <button type="submit" class="btn btn--new">Submit</button>
+    </form>
+  </div>
+</section>
+
+
+<% include ../partials/footer %>
