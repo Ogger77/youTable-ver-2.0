@@ -1,8 +1,7 @@
 # yourTable | yourtime, your table
+[![npm version]](https://img.shields.io/node/v/twilio?style=flat-square)[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) 
 
 A simple check-in web app that send the customer an sms message when their table is ready
-[![NPM Version][npm-image]][npm-url]
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) 
 
 ## Getting Started
 You need [Node.js](https://nodejs.org) installed on your machine. Simply download the installer from [nodejs.org](https://nodejs.org) and go through the installation steps.
@@ -20,6 +19,8 @@ Start up the local server:
 ```
 npm run start-dev
 ```
+### Usage
+
 
 ## Deployment
 

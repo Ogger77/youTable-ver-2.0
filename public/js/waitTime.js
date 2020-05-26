@@ -1,5 +1,5 @@
 const socket = io()
-const waitTimeTemplate = document.querySelector('#waitTime-msg').innerHTML
+// const waitTimeTemplate = document.querySelector('#waitTime-msg').innerHTML
 
 let time;
 
@@ -15,12 +15,14 @@ $(function(){
         }
         socket.emit('waitData', time)
     })
-
-    socket.on('waitData', (time) => {
-        const html = Mustache.render(waitTimeTemplate, {
-            time: time
-        })
-        $('#waitTime').html(html)
-    })
 })
+
+
+//     socket.on('waitData', (time) => {
+//         const html = Mustache.render(waitTimeTemplate, {
+//             time: time
+//         })
+//         $('#waitTime').html(html)
+//     })
+// })
 

@@ -1,21 +1,21 @@
 <% include ../partials/header %>
 
 <main class='site'>
-<div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-sm-4" id='live-time'>
+  <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-sm-4" id='live-time'>
 
-          <a id="waitTime" href="#" class="nav-link"
-            >CURRENT WAIT TIME: 0 mins</a
-          >
-          <script id="waitTime-msg" type="text/html">
-            <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: {{time}} mins</a>
-          </script>
+            <a id="waitTime" href="#" class="nav-link"
+              >CURRENT WAIT TIME: 0 mins</a
+            >
+            <script id="waitTime-msg" type="text/html">
+              <a id='waitTime' href="#" class="nav-link">CURRENT WAIT TIME: {{time}} mins</a>
+            </script>
+
+        </div>
 
       </div>
-
     </div>
-  </div>
 
 <section class='section-landing'>
     <div class='caption text-center'>
@@ -29,6 +29,8 @@
 </main>
 
 <script type='text/javaScript' src='/js/waitTime-landing.js'></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
 <script type='text/javaScript' src='/js/native.js'></script>
 
 <% include ../partials/footer %>
