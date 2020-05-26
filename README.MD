@@ -37,7 +37,7 @@ Live demo-version is up on [Heroku](https://vu-yourtable.herokuapp.com/)
 
 ## Authors
 
-* **Dinh Vu** - *https://github.com/Ogger77*
+* **Dinh Vu** - *https://ogger77.github.io/*
 
 ## License
 
