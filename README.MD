@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 # yourTable | yourtime, your table
 [![npm version]](https://img.shields.io/node/v/twilio?style=flat-square)[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) 
+=======
+# yourTable | yourtime, your table [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) 
+>>>>>>> 6ef3026066e4d9840ed907272ec6f131d580e5f1
 
 A simple check-in web app that send the customer an sms message when their table is ready
 
@@ -24,7 +28,7 @@ npm run start-dev
 
 ## Deployment
 
-Live demo-version is up on [![Heroku]](https://vu-yourtable.herokuapp.com/)
+Live demo-version is up on [Heroku](https://vu-yourtable.herokuapp.com/)
 
 ## Built With
 
@@ -35,7 +39,7 @@ Live demo-version is up on [![Heroku]](https://vu-yourtable.herokuapp.com/)
 
 ## Authors
 
-* **Dinh Vu** - *https://github.com/Ogger77
+* **Dinh Vu** - *https://github.com/Ogger77*
 
 ## License
 
