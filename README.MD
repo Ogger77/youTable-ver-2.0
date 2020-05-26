@@ -1,6 +1,7 @@
 # yourTable | yourtime, your table
-![npm version](https://img.shields.io/node/v/twilio?style=flat-square)[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) 
-![version](https://img.shields.io/badge/version-2.0.0-blue)
+![npm version](https://img.shields.io/node/v/twilio?style=flat-square)
+![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)
+![version](https://img.shields.io/badge/version-2.0.0-blue?style=flat-square)
 
 A simple check-in web app that send the customer an sms message when their table is ready
 
