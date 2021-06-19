@@ -6,7 +6,8 @@
 A simple check-in web app that send the customer an sms message when their table is ready
 
 ## Getting Started
-You need [Node.js](https://nodejs.org) installed on your machine. Simply download the installer from [nodejs.org](https://nodejs.org) and go through the installation steps.
+You need [Node.js](https://nodejs.org) installed on your machine.   
+Simply download the installer from [nodejs.org](https://nodejs.org) and go through the installation steps.
 
 ### Installing
 
